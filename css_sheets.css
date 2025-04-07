@@ -1,0 +1,99 @@
+/* style.css */
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #1a1a1a;
+    color: #00ff00;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #222;
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    color: #00ff00;
+}
+
+.hidden-content {
+    color: rgba(0, 255, 0, 0.05);
+    font-size: 0.8em;
+    margin: 20px 0;
+    word-wrap: break-word;
+}
+
+#encoded-hint {
+    background-color: #333;
+    padding: 15px;
+    border-left: 3px solid #00ff00;
+    margin: 20px 0;
+    font-family: monospace;
+    word-wrap: break-word;
+}
+
+
+.secret-button {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    opacity: 0.01; /* Almost invisible but not completely */
+    /*cursor: default; /* To not show the pointer cursor */
+    border: none;
+    background: blueviolet;
+}
+
+/* Styling for the revealed public key */
+.public-key-container {
+    background-color: #333;
+    padding: 15px;
+    border: 1px dashed #00ff00;
+    margin-top: 20px;
+    display: none; /* Hidden by default */
+}
+
+
+/* Add to style.css */
+body {
+    background-image: url('path/to/matrix-background.jpg');
+    background-blend-mode: overlay;
+}
+
+/* Add a terminal-like effect to text areas */
+textarea, pre {
+    background-color: #0a0a0a;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    border: 1px solid #00ff00;
+    padding: 10px;
+    width: 100%;
+    min-height: 100px;
+}
+
+/* Add a "computer scan" animation to certain elements */
+@keyframes scan {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100%; }
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,255,0,0.1) 0%, transparent 50%, rgba(0,255,0,0.1) 100%);
+    pointer-events: none;
+    animation: scan 2s linear infinite;
+}
